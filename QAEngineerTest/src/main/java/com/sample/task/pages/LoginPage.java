@@ -7,11 +7,10 @@ import com.sample.task.base.TestBase;
 
 public class LoginPage extends TestBase {
 
-	By username = By.xpath("/html/body/div/div/div[1]/div[1]/div/main/div/div/form/div[1]/div[1]/input");
-	By Continue = By.xpath("/html/body/div/div/div/div[1]/div/main/div/div/form/div[1]/div[2]/button");
-
-	By password = By.id("password");
-	By Login = By.xpath("/html/body/div/div/div[1]/div[1]/div/main/div/div/form/div[1]/div[2]/button");
+	By username = By.xpath("//input[contains(@name,'usernameOrEmail')]");
+	By Continue = By.xpath("//div[@class='login']//button[@type='submit']");
+	By password = By.xpath("//input[contains(@id,'password')]");
+	By Login = By.xpath("//div[@class='login']//button[@type='submit']");
 
 	public LoginPage() {
 
@@ -29,6 +28,7 @@ public class LoginPage extends TestBase {
 //		driver.findElement(password).sendKeys(p.getProperty("password"));
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElement(Login).click();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		return new My_Profile_Page();
 
 	}
