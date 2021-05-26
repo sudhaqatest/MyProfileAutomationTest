@@ -17,7 +17,7 @@ public class LoginPage extends TestBase {
 		PageFactory.initElements(driver, this);
 	}
 
-	public My_Profile_Page loginToWordPress(String uid, String pass) {
+	public void loginToWordPress(String uid, String pass) {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 //		driver.findElement(username).sendKeys(p.getProperty("username"));
 		driver.findElement(username).sendKeys(uid);
@@ -29,7 +29,7 @@ public class LoginPage extends TestBase {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.findElement(Login).click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		return new My_Profile_Page();
+		
 
 	}
 
