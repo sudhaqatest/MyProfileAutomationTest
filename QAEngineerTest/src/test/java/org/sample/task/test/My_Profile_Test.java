@@ -75,7 +75,7 @@ public class My_Profile_Test extends TestBase {
 		Robot robot = new Robot();
 		robot.setAutoDelay(4000);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		StringSelection stringselection = new StringSelection("c:\\TestProfileImage.PNG");
+		StringSelection stringselection = new StringSelection("TestProfileImage.PNG");
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringselection, null);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.focus();");
@@ -98,9 +98,11 @@ public class My_Profile_Test extends TestBase {
 	}
 
 	private static void captureScreen() throws Exception {
-		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		Files.copy(scrFile, new File("CaptureScreen.jpg"));
+		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		com.google.common.io.Files.copy(screenshot,  new File("Capturescreenshot.png"));
 		return;
 
 	}
+
+
 
